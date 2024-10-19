@@ -22,3 +22,10 @@ class actor:
         if self.actor_body.colliderect(projectile):
             self.rendering(color = (255,0,0))
 
+    def take_item(self, item_list):
+        if self.actor_body.collidelist(item_list)!= -1:
+            current_item_index = self.actor_body.collidelist(item_list)
+            item_list[current_item_index].x = self.actor_body.centerx
+            item_list[current_item_index].y = self.actor_body.centery
+
+
